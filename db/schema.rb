@@ -19,7 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_08_181605) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_communities_on_user_id"
   end
 
