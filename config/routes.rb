@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "pages#home"
-  resources :communities
-  resources :recommendations do
-    resources :ratings, only: [:new]
+  resources :communities, only: [:index, :show, :new, :create] do
+    resources :recommendations, only: [:show, :new, :create, :edit, :update, :destroy] do
+      resources :ratings, only: [:new]
+    end
+  end
 end
