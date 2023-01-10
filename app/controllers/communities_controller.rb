@@ -12,7 +12,7 @@ class CommunitiesController < ApplicationController
   end
 
   def create
-    @community = Community.new(params_communities)
+    @community = Community.new(community_params)
     if @community.save
       redirect_to community_path(@community)
     else
@@ -28,8 +28,8 @@ class CommunitiesController < ApplicationController
 
   private
 
-  def params_communities
-    params.require(:restaurant).permit(:name, :address, :rating)
+  def community_params
+    params.require(:community).permit(:name, :photo)
   end
 
 end
