@@ -12,5 +12,5 @@ class User < ApplicationRecord
 
   validates :username, presence: true
   validates :password, length: { minimum: 7 }
-  validates :username, uniqueness: true
+  validates :username, uniqueness: { scope: :password }
 end
