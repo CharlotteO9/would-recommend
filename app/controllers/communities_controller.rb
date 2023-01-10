@@ -31,4 +31,5 @@ class CommunitiesController < ApplicationController
   def params_communities
     params.require(:restaurant).permit(:name, :address, :rating)
   end
+
 end
