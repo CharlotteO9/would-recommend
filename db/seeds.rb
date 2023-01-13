@@ -35,14 +35,14 @@ user4 = User.create!(
   avatar: "https://images.unsplash.com/photo-1598155523122-3842334d2c17?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
 )
 
-avatar = ["man", "hair", "fashion", "women", "smile", "glasses", "nice", "model", "suit"]
+avatar = ["man", "women", "hair", "fashion", "smile", "glasses", "nice", "model", "suit", "face", "head"]
 
 10.times do
   User.create!(
     username: Faker::Internet.username,
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 8),
-    avatar: "https://source.unsplash.com/random/?person,#{avatar.sample}",
+    avatar: "https://source.unsplash.com/random/?person,#{avatar.sample}"
   )
 end
 
@@ -79,10 +79,11 @@ users.each do |user|
   )
 end
 
-puts "Creating 60 recommendations..."
+puts "Creating 70 recommendations..."
 
-food = ["food", "meal", "foodie", "dish", "dinner", "vegan", "brunch", "drink"]
-book = ["read", "reading", "bookstore", "classic", "novel", "uk", "table", "canada"]
+food = ["food", "meal", "foodie", "dish", "dinner", "vegan", "brunch", "drink", "salad", "cake", "pasta", "healthy"]
+book = ["read", "reading", "bookstore", "classic", "novel", "uk", "table", "canada", "cozy", "front-cover", "publish"]
+travel = ["monument", "place", "viewpoint", "street", "museum", "walk", "beach", "lake", "ruins", "church", "hiking", "forest"]
 
 10.times do
   Recommendation.create!(
@@ -140,9 +141,10 @@ end
 
 10.times do
   Recommendation.create!(
-    category: "shop",
-    title: Faker::Company.name,
-    description: "It's a #{Faker::Company.industry}, #{Faker::Company.catch_phrase}",
+    category: "trip",
+    title: Faker::Fantasy::Tolkien.location,
+    description: "It's a great #{travel.sample}",
+    photo: "https://source.unsplash.com/random/?travel,#{travel.sample}",
     address: Faker::Address.full_address,
     community_id: users.sample.communities.first.id,
     user_id: users.sample.id

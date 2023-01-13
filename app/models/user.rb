@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :communities, through: :memberships
 
-  validates :username, presence: true
+  validates :email, :password, :username, presence: true
   validates :password, length: { minimum: 7 }
-  validates :username, uniqueness: { scope: :password }
+  # validates :username, uniqueness: { scope: :password }
 end
