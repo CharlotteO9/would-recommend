@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
   resources :communities, only: [:index, :show, :new, :create, :destroy] do
-    resources :recommendations, only: [:show, :new, :create, :edit, :update, :destroy] do
+    resources :recommendations, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
       resources :ratings, only: [:create]
     end
   end

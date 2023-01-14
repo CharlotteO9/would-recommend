@@ -1,0 +1,14 @@
+<div class="container">
+<h1>Recommendations index</h1>
+
+<%= link_to "Add a recommendation", new_community_recommendation_path %>
+
+
+  <ul><% @recommendations.each do |recommendation| %>
+    <li>
+      <p><%= recommendation.title %></p>
+      <%= link_to "details", community_recommendation_path(recommendation) %>
+    </li>
+      <% end %>
+  </ul>
+</div>

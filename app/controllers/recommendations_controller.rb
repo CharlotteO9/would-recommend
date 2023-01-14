@@ -1,4 +1,4 @@
-class RecommentionsController < ApplicationController
+class RecommendationsController < ApplicationController
   def index
     @recommendations = Recommendation.all
   end
