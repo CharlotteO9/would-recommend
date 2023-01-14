@@ -25,7 +25,8 @@ class RecommentionsController < ApplicationController
   end
 
   def update
-
+    @recommendation.update(recommendation_params)
+    redirect_to recommendations_path, notice: "Recommendation modified !"
   end
 
   def destroy
