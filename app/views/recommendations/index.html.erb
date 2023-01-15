@@ -6,8 +6,8 @@
 
   <ul><% @recommendations.each do |recommendation| %>
     <li>
-      <p><%= recommendation.title %></p>
-      <%= link_to "details", community_recommendation_path(recommendation) %>
+      <p><%= recommendation.category %><%= recommendation.title %></p>
+      <%= link_to "details", community_recommendations_path(recommendation) %>
     </li>
       <% end %>
   </ul>

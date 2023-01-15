@@ -1,4 +1,6 @@
 class RecommendationsController < ApplicationController
+  before_action :set_community, only: %i[new create]
+
   def index
     @recommendations = Recommendation.all
   end
@@ -13,10 +15,12 @@ class RecommendationsController < ApplicationController
 
   def create
     @recommendation = Recommendation.new(recommendation_params)
+    @recommendation.community = @community
+    @recommendation.user = User.first #current_user
     if @recommendation.save
-      redirect_to recommendation_path(@recommendation)
+      redirect_to community_recommendations_path(@community)
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity, notice: "didn't work"
     end
   end
 
@@ -36,8 +40,11 @@ class RecommendationsController < ApplicationController
 
   private
 
+  def set_community
+    @community = Community.find(params[:community_id])
+  end
+
   def recommendation_params
     params.require(:recommendation).permit(:category, :title, :description, :address, :photo)
   end
-
 end
