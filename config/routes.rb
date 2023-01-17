@@ -5,10 +5,19 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  # root to: "pages#home" -> besoin de ne pas nester pour pouvoir avoir ma page "new recommendation"
+  # resources :communities, only: [:index, :show, :new, :create, :destroy] do
+  #   resources :recommendations do
+  #     resources :ratings, only: [:create]
+  #   end
+  # end
+
   root to: "pages#home"
   resources :communities, only: [:index, :show, :new, :create, :destroy] do
-    resources :recommendations, only: [:show, :new, :create, :edit, :update, :destroy] do
-      resources :ratings, only: [:create]
-    end
+    resources :recommendations
   end
+
+  # resources :recommendations, only: [:show] do
+  #   resources :ratings, only: [:create]
+  # end
 end
