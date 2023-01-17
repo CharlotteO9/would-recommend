@@ -1,10 +1,11 @@
 class CommunitiesController < ApplicationController
   def index
-    @communities = Community.all
+    @communities = Community.where(user_id: current_user)
   end
 
   def show
     @community = Community.find(params[:id])
+    @recommendations = Recommendation.where(community_id: @community.id)
   end
 
   def new

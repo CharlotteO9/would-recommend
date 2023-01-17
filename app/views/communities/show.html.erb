@@ -1,0 +1,8 @@
+<div class="container">
+  <%= link_to "Go back to all the communities", communities_path %>
+
+  <h1><%=@community.name%></h1>
+  <img src="<%=@community.photo%>" alt="photo of a group of friend">
+
+  <%= render "recommendations/index"%>
+</div>

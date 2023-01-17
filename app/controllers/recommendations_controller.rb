@@ -1,12 +1,13 @@
 class RecommendationsController < ApplicationController
-  before_action :set_community, only: %i[new create]
+  before_action :set_community, only: %i[show new create]
 
   def index
-    @recommendations = Recommendation.all
+    @recommendations = Recommendation.where(community_id: @community.id)
   end
 
   def show
     @recommendation = Recommendation.find(params[:id])
+    @ratings = Rating.where(recommendation_id: @recommendation.id)
   end
 
   def new

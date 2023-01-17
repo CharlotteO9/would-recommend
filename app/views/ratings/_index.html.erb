@@ -1,0 +1,6 @@
+<div class="container">
+  <ul><% @ratings.each do |rating| %>
+    <li><%= rating.score %> stars - <%= rating.comment %></li>
+    <% end %>
+  </ul>
+</div>

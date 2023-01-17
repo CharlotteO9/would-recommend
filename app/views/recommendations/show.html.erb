@@ -1,0 +1,11 @@
+<div class="container">
+  <%= link_to "Go back to all the recommendations", community_path(@community) %>
+
+  <%= @recommendation.category %>
+  <%= @recommendation.title %>
+  <%= @recommendation.description %>
+  <%= @recommendation.address %>
+  <img src="<%=@recommendation.photo%>" alt="photo">
+
+  <%= render "ratings/index"%>
+</div>
