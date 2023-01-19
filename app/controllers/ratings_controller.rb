@@ -1,12 +1,11 @@
 class RatingsController < ApplicationController
   def create
-    @recommendation = Recommendation.find(params[:id])
-    @community = Community.find(params[:community_id])
     @rating = Rating.new(rating_params)
     @rating.user = current_user
+    @recommendation = Recommendation.find(params[:recommendation_id])
     @rating.recommendation = @recommendation
     if @rating.save
-      redirect_to community_recommendation_path(@community, @recommendation)
+      redirect_to recommendation_path(@recommendation)
     else
       render "recommendations/show", status: :unprocessable_entity
     end

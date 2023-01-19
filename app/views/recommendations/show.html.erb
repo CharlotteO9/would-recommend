@@ -1,11 +1,15 @@
 <div class="container">
   <%= link_to "Go back to all the recommendations", community_path(@community) %>
 
+  <h1><%= @recommendation.title %></h1>
   <%= @recommendation.category %>
-  <%= @recommendation.title %>
   <%= @recommendation.description %>
   <%= @recommendation.address %>
   <img src="<%=@recommendation.photo%>" alt="photo">
 
+  <%= link_to "Edit", edit_community_recommendation_path(@community, @recommendation) %>
+  <%= link_to "Delete", community_recommendation_path(@community, @recommendation), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
   <%= render "ratings/index"%>
+
 </div>
