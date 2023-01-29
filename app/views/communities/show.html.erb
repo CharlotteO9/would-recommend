@@ -1,0 +1,11 @@
+<div class="container">
+  <%= link_to "Go back to all the communities", communities_path %>
+
+  <h1><%=@community.name%></h1>
+  <img src="<%=@community.photo%>" alt="photo of a group of friend">
+  <%= link_to "Delete", @community, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <%= link_to "Edit", edit_community_path(@community) %>
+
+  <%= render "recommendations/index"%>
+
+</div>
