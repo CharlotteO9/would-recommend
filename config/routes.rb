@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   # end
 
   root to: "pages#home"
-  resources :communities, only: [:index, :show, :new, :create, :destroy] do
+  resources :communities do
     resources :recommendations
   end
 
-  # resources :recommendations, only: [:show] do
-  #   resources :ratings, only: [:create]
-  # end
+  resources :recommendations, only: [:show] do
+    resources :ratings, only: [:create]
+  end
 end

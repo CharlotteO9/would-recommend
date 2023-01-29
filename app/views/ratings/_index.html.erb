@@ -1,0 +1,12 @@
+<div class="container">
+  <ul><% @ratings.each do |rating| %>
+    <li><%= rating.score %> stars - <%= rating.comment %></li>
+    <% end %>
+  </ul>
+
+  <%= simple_form_for [@recommendation, @rating] do |f| %>
+    <%= f.input :score %>
+    <%= f.input :comment %>
+    <%= f.submit "Post" %>
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>All the communities of the current user</h1>
+  <%= link_to "Create a new community", new_community_path %>
+
+  <div class="communities">
+    <% @communities.each do |community| %>
+      <div class="community">
+        <%= community.name %>
+        <%= link_to "More details ", community_path(community) %>
+        <img src="<%=community.photo%>" alt="photo of a group of friend">
+      </div>
+    <% end %>
+  </div>
+
+</div>
