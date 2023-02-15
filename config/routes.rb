@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :communities do
     resources :recommendations
+    resources :memberships, only: [:index, :new, :create, :destroy]
   end
 
   resources :recommendations, only: [:show] do

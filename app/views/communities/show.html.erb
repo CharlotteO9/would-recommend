@@ -5,6 +5,9 @@
   <img src="<%=@community.photo%>" alt="photo of a group of friend">
   <%= link_to "Delete", @community, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
   <%= link_to "Edit", edit_community_path(@community) %>
+  <%= link_to "Add a new member", new_community_membership_path(@community) %>
+
+  <%= render "memberships/index"%>
 
   <%= render "recommendations/index"%>
 

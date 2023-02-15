@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Add a new member to the community</h1>
+  <%= simple_form_for [@community, @membership] do |f| %>
+    <%= f.input :user_id %>
+    <%= f.submit "Add this member" %>
+  <% end %>
+
+  <ul><% @users.each do |user| %>
+    <li>
+      <div class="avatar">
+        <img src="<%=user.avatar%>" alt="profil picture">
+      </div>
+      <p><%= user.username %> - <%= user.id %> </p>
+    </li>
+      <% end %>
+  </ul>
+</div>
