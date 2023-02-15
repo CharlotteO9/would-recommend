@@ -1,14 +1,16 @@
 <div class="container">
   <h1>Recommendations index</h1>
 
-  <%= link_to "Add a recommendation", new_community_recommendation_path(@community) %>
+  <div class="btn-grad">
+    <%= link_to "Add a recommendation", new_community_recommendation_path(@community) %>
+  </div>
 
 
   <ul><% @recommendations.each do |recommendation| %>
     <li>
       <p><%= recommendation.category %> - <%= recommendation.title %> - <%= recommendation.community.name %></p>
       <%= link_to "details",  recommendation_path(recommendation) %>
-  
+
     </li>
       <% end %>
   </ul>

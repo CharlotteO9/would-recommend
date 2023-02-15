@@ -7,6 +7,6 @@
   <%= simple_form_for [@recommendation, @rating] do |f| %>
     <%= f.input :score %>
     <%= f.input :comment %>
-    <%= f.submit "Post" %>
+    <%= f.submit "Post", class: "btn-grad" %>
   <% end %>
 </div>
