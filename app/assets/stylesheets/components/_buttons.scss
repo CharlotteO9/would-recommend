@@ -1,26 +1,52 @@
+.btn-grad {
+  background-image: linear-gradient(to right, #DD5E89 0%, #FA7E0A  51%, #DD5E89  100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border: none;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+}
 
-         .btn-grad {
-          background-image: linear-gradient(to right, #DD5E89 0%, #FA7E0A  51%, #DD5E89  100%);
-          margin: 10px;
-          padding: 15px 45px;
-          text-align: center;
-          text-transform: uppercase;
-          transition: 0.5s;
-          background-size: 200% auto;
-          color: white;
-          box-shadow: 0 0 20px #eee;
-          border-radius: 10px;
-          display: block;
-          border: none;
-            a {
-              text-decoration: none;
-              color: white;
-            }
-        }
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
 
-        .btn-grad:hover {
-          background-position: right center; /* change the direction of the change here */
-          color: #fff;
-          font-weight: bold;
-          text-decoration: none;
-        }
+.btn-secondary-hm {
+  background-image: white;
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #FA7E0A;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  border: solid 2px #FA7E0A;
+    a {
+      text-decoration: none;
+      color: #FA7E0A;
+    }
+}
+
+.btn-secondary-hm:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #FA7E0A;
+  font-weight: bold;
+  text-decoration: none;
+  border: solid 4px #FA7E0A;
+}

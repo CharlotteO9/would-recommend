@@ -7,7 +7,9 @@
     <% @communities.each do |community| %>
       <div class="community">
         <%= community.name %>
-        <%= link_to "More details ", community_path(community) %>
+        <div class="btn-secondary-hm">
+          <%= link_to "More details ", community_path(community) %>
+        </div>
         <img src="<%=community.photo%>" alt="photo of a group of friend">
       </div>
     <% end %>
