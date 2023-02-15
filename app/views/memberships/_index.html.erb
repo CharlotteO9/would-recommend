@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Membership index</h1>
+
+  <ul><% @memberships.each do |membership| %>
+    <li>
+      <div class="avatar">
+        <img src="<%= membership.user.avatar %>" alt="profil picture">
+      </div>
+      <p><%= membership.user.username %> </p>
+    </li>
+    <% end %>
+  </ul>
+</div>
