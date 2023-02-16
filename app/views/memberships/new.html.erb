@@ -1,16 +1,16 @@
 <div class="container">
   <h1>Add a new member to the community</h1>
   <%= simple_form_for [@community, @membership] do |f| %>
-    <%= f.input :user_id %>
+    <%= f.input :user_id, prompt: "Choose among the users", collection: @membership_users.map{ |user| [user.id, user.username] }, label_method: :second, value_method: :first %>
     <%= f.submit "Add this member" %>
   <% end %>
 
-  <ul><% @users.each do |user| %>
+  <ul><% @membership_users.each do |mb_user| %>
     <li>
       <div class="avatar">
-        <img src="<%=user.avatar%>" alt="profil picture">
+        <img src="<%=mb_user.avatar%>" alt="profil picture">
       </div>
-      <p><%= user.username %> - <%= user.id %> </p>
+      <p><%= mb_user.username %> - <%= mb_user.id %> </p>
     </li>
       <% end %>
   </ul>
