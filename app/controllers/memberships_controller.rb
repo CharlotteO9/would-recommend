@@ -1,12 +1,8 @@
 class MembershipsController < ApplicationController
-  def index
-    @community = Community.find(params[:community_id])
-    @memberships = Membership.all
-  end
-
   def new
-    @users = User.where.not(id: current_user.id)
     @community = Community.find(params[:community_id])
+    membership_user_id = Membership.where(community_id: @community.id).map { |mb| mb.user_id }
+    @membership_users = User.where.not(id: current_user.id).where.not(id: membership_user_id)
     @membership = Membership.new
   end
 
