@@ -50,3 +50,15 @@
   text-decoration: none;
   border: solid 4px #FA7E0A;
 }
+
+a {
+  color: #FA7E0A;
+  font-style: italic;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #DD5E89;
+  font-weight: bold;
+}
