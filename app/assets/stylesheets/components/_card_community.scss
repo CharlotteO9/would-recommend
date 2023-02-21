@@ -1,0 +1,36 @@
+.card-community {
+  width: 400px;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.card-community > img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-community > h3 {
+  align-items: center;
+  margin: 1rem auto;
+  padding-top: 1rem;
+  border-top: solid;
+  width: max-content;
+}
+
+.menu {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  text-align: center;
+}
+
+.menu > li {
+  display: inline-block;
+  margin: 0.2rem;
+}
+
+.menu > li > .avatar img {
+  margin-left: 0;
+}

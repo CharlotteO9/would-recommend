@@ -3,16 +3,26 @@
   <div class="btn-grad">
     <%= link_to "Create a new community", new_community_path %>
   </div>
-  <div class="communities">
-    <% @communities.each do |community| %>
-      <div class="community">
-        <%= community.name %>
-        <div class="btn-secondary-hm">
-          <%= link_to "More details ", community_path(community) %>
-        </div>
+
+
+  <% @communities.each do |community| %>
+    <%= link_to community_path(community) do %>
+      <div class="card-community">
         <img src="<%=community.photo%>" alt="photo of a group of friend">
+        <h3><%= community.name %></h3>
+          <ul class="menu">
+            <% community.memberships.first(5).each do |membership| %>
+              <li>
+                <div class="avatar">
+                  <img src="<%= membership.user.avatar %>" alt="profil picture">
+                </div>
+              </li>
+            <% end %>
+            <li> + <%=community.memberships.count - 5 %> </li>
+          </ul>
+          </div>
       </div>
     <% end %>
-  </div>
+  <% end %>
 
 </div>
