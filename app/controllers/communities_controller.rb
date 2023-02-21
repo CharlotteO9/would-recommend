@@ -8,6 +8,7 @@ class CommunitiesController < ApplicationController
   def show
     @recommendations = Recommendation.where(community_id: @community.id)
     @memberships = Membership.where(community_id: @community.id)
+    @recommendation = Recommendation.new
   end
 
   def new
