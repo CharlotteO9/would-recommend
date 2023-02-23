@@ -1,12 +1,15 @@
-// .recommendations-list {
-//   display: grid;
-// }
+.recommendations-list {
+  display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 1rem;
+}
 
 .card-recommendation {
   width: 250px;
+  height: 225px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   background: white;
   margin-bottom: 2rem;
 }
@@ -66,9 +69,6 @@
 
 .recommendation-content {
   padding-top: 1rem;
-  p {
-    margin-bottom: 0;
-  }
 }
 
 .restaurant-btn {

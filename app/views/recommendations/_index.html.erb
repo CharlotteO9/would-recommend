@@ -35,15 +35,15 @@
   <div class="recommendations-list">
     <% @recommendations.each do |recommendation| %>
       <div class="card-recommendation <%= recommendation.category %>-card">
-          <div class="<%= recommendation.category %>-icon icons">
-              <i class="fa-solid <%= find_icon(recommendation.category)%>"></i>
-          </div>
+        <div class="btn-reco <%= recommendation.category %>-btn">
+            <%= link_to "details",  recommendation_path(recommendation) %>
+        </div>
+        <div class="<%= recommendation.category %>-icon icons">
+            <i class="fa-solid <%= find_icon(recommendation.category)%>"></i>
+        </div>
         <div class="recommendation-content">
           <h5><strong><%= recommendation.title %></strong></h5>
-          <p><%= recommendation.description.truncate(75) %></p>
-          <div class="btn-reco <%= recommendation.category %>-btn">
-              <%= link_to "details",  recommendation_path(recommendation) %>
-          </div>
+          <p><%= recommendation.description.truncate(50) %></p>
         </div>
       </div>
     <% end %>
