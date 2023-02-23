@@ -1,45 +1,52 @@
 <div class="container">
   <h1>Recommendations index</h1>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn-grad" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add a recommendation
-</button>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn-grad" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Add a recommendation
+  </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New recommendation</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <%= simple_form_for [@community, @recommendation] do |f| %>
-            <%= f.input :category, collection: %w[restaurant watch read podcast health shop trip] %>
-            <%= f.input :title %>
-            <%= f.input :description %>
-            <%= f.submit "Create recommendation", class: "btn-grad" %>
-          <% end %>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">New recommendation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button> %>
+        <div class="modal-body">
+          <div class="container">
+            <%= simple_form_for [@community, @recommendation] do |f| %>
+              <%= f.input :category, collection: %w[restaurant watch read podcast health shop trip] %>
+              <%= f.input :title %>
+              <%= f.input :description %>
+              <%= f.submit "Create recommendation", class: "btn-grad" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button> %>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-
-  <ul><% @recommendations.each do |recommendation| %>
-    <li>
-      <p><%= recommendation.category %> - <%= recommendation.title %> - <%= recommendation.community.name %></p>
-        <div class="btn-secondary-hm">
-          <%= link_to "details",  recommendation_path(recommendation) %>
+  <div class="recommendations-list">
+    <% @recommendations.each do |recommendation| %>
+      <div class="card-recommendation <%= recommendation.category %>-card">
+        <div class="btn-reco <%= recommendation.category %>-btn">
+            <%= link_to "details",  recommendation_path(recommendation) %>
         </div>
-    </li>
-      <% end %>
-  </ul>
+        <div class="<%= recommendation.category %>-icon icons">
+            <i class="fa-solid <%= find_icon(recommendation.category)%>"></i>
+        </div>
+        <div class="recommendation-content">
+          <h5><strong><%= recommendation.title %></strong></h5>
+          <p><%= recommendation.description.truncate(50) %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>

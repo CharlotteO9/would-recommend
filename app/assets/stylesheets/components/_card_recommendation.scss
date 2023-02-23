@@ -1,0 +1,115 @@
+.recommendations-list {
+  display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 1rem;
+}
+
+.card-recommendation {
+  width: 250px;
+  height: 225px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 0 1rem 1rem 1rem;
+  background: white;
+  margin-bottom: 2rem;
+}
+.restaurant-card {
+  border-top: solid 5px $restaurant;
+}
+.watch-card {
+  border-top: solid 5px $watch;
+}
+.read-card {
+  border-top: solid 5px $read;
+}
+.podcast-card {
+  border-top: solid 5px $podcast;
+}
+.health-card {
+  border-top: solid 5px $health;
+}
+.shop-card {
+  border-top: solid 5px $shop;
+}
+.trip-card {
+  border-top: solid 5px $trip;
+}
+
+.icons {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 auto;
+  padding-top: 3px;
+}
+.restaurant-icon {
+  background-color: $restaurant;
+}
+.watch-icon {
+  background-color: $watch;
+}
+.read-icon{
+  background-color: $read;
+}
+.podcast-icon {
+  background-color: $podcast;
+}
+.health-icon {
+  background-color: $health;
+}
+.shop-icon {
+  background-color: $shop;
+}
+.trip-icon {
+  background-color: $trip;
+}
+
+.recommendation-content {
+  padding-top: 1rem;
+}
+
+.restaurant-btn {
+  border: solid $restaurant;
+  a {
+    color: $restaurant;
+  }
+}
+.watch-btn {
+  border: solid $watch;
+  a {
+    color: $watch;
+  }
+}
+.read-btn {
+  border: solid $read;
+  a {
+    color: $read;
+  }
+}
+.podcast-btn {
+  border: solid $podcast;
+  a {
+    color: $podcast;
+  }
+}
+.health-btn {
+  border: solid $health;
+  a {
+    color: $health;
+  }
+}
+.shop-btn {
+  border: solid $shop;
+  a {
+    color: $shop;
+  }
+}
+.trip-btn {
+  border: solid $trip;
+  a {
+    color: $trip;
+  }
+}
