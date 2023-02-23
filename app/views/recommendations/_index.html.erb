@@ -41,7 +41,7 @@
         <div class="recommendation-content">
           <h5><strong><%= recommendation.title %></strong></h5>
           <p><%= recommendation.description.truncate(75) %></p>
-          <div class="btn-secondary-hm">
+          <div class="btn-reco <%= recommendation.category %>-btn">
               <%= link_to "details",  recommendation_path(recommendation) %>
           </div>
         </div>

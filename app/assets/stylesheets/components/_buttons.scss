@@ -61,3 +61,13 @@ a:hover {
   color: #DD5E89;
   font-weight: bold;
 }
+
+.btn-reco {
+  background: white;
+  position: relative;
+  bottom: -30px;
+  left: 65px;
+  border-radius: 25px;
+  width: fit-content;
+  padding: 0.25rem 1rem;
+}
